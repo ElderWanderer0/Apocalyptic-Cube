@@ -1,13 +1,11 @@
 # Apocalyptic-Cube
-A platform game that you try not to die when you escape meteors and other stuffs.
+𝙰 𝚙𝚕𝚊𝚝𝚏𝚘𝚛𝚖 𝚐𝚊𝚖𝚎 𝚝𝚑𝚊𝚝 𝚢𝚘𝚞 𝚝𝚛𝚢 𝚗𝚘𝚝 𝚝𝚘 𝚍𝚒𝚎 𝚠𝚑𝚎𝚗 𝚢𝚘𝚞 𝚎𝚜𝚌𝚊𝚙𝚎 𝚖𝚎𝚝𝚎𝚘𝚛𝚜 𝚊𝚗𝚍 𝚘𝚝𝚑𝚎𝚛 𝚜𝚝𝚞𝚏𝚏𝚜.
 
 <p>
-  <span style="font-family: sans-serif; font-size: 18px;">Demo video of the game.</span> <br>
-  <span style="font-family: 'Bebas Neue', sans-serif; font-size: 32px; font-weight: bold; color: #ff4500; letter-spacing: 2px;">DİKKAT ÇEKİCİ BAŞLIK</span>
-
-  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo.gif?raw=true" width="300" alt="Game demo"><br>
-  <span style="font-family: sans-serif; font-size: 18px;">Particles video.</span><br>
-  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo2.gif?raw=true" width="150" alt="particles"><br>
-  <span style="font-family: sans-serif; font-size: 18px;">Friction effect video. </span><br>
-  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo3.gif?raw=true" width="150" alt="friction"><br>
+  𝘿𝙚𝙢𝙤 𝙫𝙞𝙙𝙚𝙤 𝙤𝙛 𝙩𝙝𝙚 𝙜𝙖𝙢𝙚. <br>
+  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo.gif?raw=true" width="300" alt="Game demo"><br><br><br>
+  𝙋𝙖𝙧𝙩𝙞𝙘𝙡𝙚𝙨 𝙫𝙞𝙙𝙚𝙤.<br>
+  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo2.gif?raw=true" width="200" alt="particles"><br><br><br>
+  𝙁𝙧𝙞𝙘𝙩𝙞𝙤𝙣 𝙚𝙛𝙛𝙚𝙘𝙩 𝙫𝙞𝙙𝙚𝙤.<br>
+  <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo3.gif?raw=true" width="200" alt="friction"><br><br><br>
 </p>
