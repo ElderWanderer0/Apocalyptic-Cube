@@ -346,9 +346,28 @@ class Gadgets:
 
     @staticmethod
     def galactic_explosion(x, y):
-        pass
+        border_circle = pygame.draw.circle(screen, color_white, (x, y), 50, 1)
+        # inner_circle
+        draw_circle(color_grey3, x, y, 45)
+        # inner shape
+        pygame.draw.circle(screen, (255, 185, 185), (x, y), 35)
+        pygame.draw.circle(screen, (255, 127, 127), (x, y), 25)
+        pygame.draw.circle(screen, (255, 85, 85), (x, y), 15)
+        pygame.draw.circle(screen, (255, 70, 70), (x, y), 15, 1)
+        pygame.draw.circle(screen, (255, 110, 110), (x, y), 25, 1)
+        pygame.draw.circle(screen, (255, 165, 165), (x, y), 35, 1)
+        draw_rect(color_ice, x - 10, y - 10, 20, 20)
+
+        return border_circle
 
 
+counter_for_galacticExplosion = 0
+galacticExplosion_count = 3
+galacticExplosion_chance = random.randint(1, 3)
+reGalacticExp = False
+galacticExplosion_get = False
+galacticExplosion = False
+galacticExp_timelist = [time]
 counter_for_theWorld = 0
 theWorld_count = 1
 theWorld_chance = random.randint(1, 3)
@@ -388,8 +407,6 @@ fps = 144
 clock = pygame.time.Clock()
 
 while run:
-
-
 
     dx = 0
     dy = 0
@@ -446,6 +463,10 @@ while run:
                 if theWorld_count == 1:
                     theWorld_count -= 1
                     theWorld_get = True
+            if event.key == pygame.K_k:
+                if galacticExplosion_count > 0:
+                    galacticExplosion_count -= 1
+                    galacticExplosion = True
         if event.type == pygame.KEYUP:
             pass
     keys = pygame.key.get_pressed()
@@ -708,9 +729,26 @@ while run:
             reTheWorld = False
 
         # Galactic Explosion-------------------------------//
+        if chance == 2 and counter_for_galacticExplosion > galacticExplosion_chance:
+            galacticExplosion_gadget = Gadgets.galactic_explosion(col_x8 + col_width8 / 2, col_y8 - 70)
+            if character.colliderect(galacticExplosion_gadget):
+                spawn_particle(100, col_x8 + col_width8 / 2, col_y8, (color_white, color_ice, color_grey1),
+                               100)
+                if galacticExplosion_count < 2:
+                    galacticExplosion_count += 1
 
-
+                counter_for_galacticExplosion = 0
+                galacticExplosion_chance = random.randint(5, 10)
+                reGalacticExp = True
+            if col_x8 < -col_width8:
+                counter_for_galacticExplosion = 0
+                theWorld_chance = random.randint(5, 10)
+                reGalacticExp = True
+        if reGalacticExp:
+            galacticExplosion_chance = random.randint(5, 10)
+            reGalacticExp = False
     # Meteors--------------------------------------------//
+
     m1 = spawn_meteor(color_meteor, m1_x, m1_y, m1_r, m1_r)
     m2 = spawn_meteor(color_meteor, m2_x, m2_y, m2_r, m2_r)
     m3 = spawn_meteor(color_meteor, m3_x, m3_y, m3_r, m3_r)
@@ -794,6 +832,7 @@ while run:
             counter_for_barrier += 1
             counter_for_dashReload += 1
             counter_for_theWorld += 1
+            counter_for_galacticExplosion += 1
 
     if chance == 1:
         if theWorld:
@@ -828,6 +867,7 @@ while run:
             counter_for_barrier += 1
             counter_for_dashReload += 1
             counter_for_theWorld += 1
+            counter_for_galacticExplosion += 1
     if chance == 2:
         if theWorld:
             if theWorld_timeList[0] + 5 <= time:
@@ -861,6 +901,7 @@ while run:
             counter_for_barrier += 1
             counter_for_dashReload += 1
             counter_for_theWorld += 1
+            counter_for_galacticExplosion += 1
     # Character's movement--------------------------------------------------------------------------------------------//
     if keys[K_d] or keys[K_RIGHT]:
         dx += char_speed
@@ -920,13 +961,59 @@ while run:
         draw_rect(color_ice, char_x, char_y, char_width, char_height)
         dash = False
 
-    # The world
+    # The world-------------------------------------------------------------------------------------------------------//
     if theWorld_get:
         theWorld_timeList = [time]
         theWorld = True
         theWorld_get = False
     draw_text(f"The world : {theWorld_count}", "Arial", 30, 10, 900, color_white)
 
+    # Galactic Explosion----------------------------------------------------------------------------------------------//
+    '''Columnlarda bug var bunarı düzeltelim'''
+    if galacticExplosion:
+
+        if chance == 0:
+            col_x = col_xF
+            col_x2 = col_xF
+        if chance == 1:
+            col_x3 = col_xF
+            col_x5 = col_xF
+            col_x6 = col_xF
+        if chance == 2:
+            col_x4 = col_xF
+            col_x7 = col_xF
+            col_x8 = col_xF
+        chance = random.choice(probability)
+
+        m1_x = random.randint(300, 1700)
+        m1_y = random.randint(-100, 0)
+        m1_r = random.randint(15, 25)
+        m1_s = random.choice(meteor_speedList)
+        m1_v = random.choice(meteor_velocityList)
+
+        m2_x = random.randint(300, 1700)
+        m2_y = random.randint(-100, 0)
+        m2_r = random.randint(15, 25)
+        m2_s = random.choice(meteor_speedList)
+        m2_v = random.choice(meteor_velocityList)
+
+        m3_x = random.randint(300, 1700)
+        m3_y = random.randint(-100, 0)
+        m3_r = random.randint(15, 25)
+        m3_s = random.choice(meteor_speedList)
+        m3_v = random.choice(meteor_velocityList)
+
+        sp1_x = -600
+        sp1_x2 = 0
+
+        sp2_x = -600
+        sp2_x2 = 0
+
+        char_y = 700
+
+        galacticExplosion = False
+        galacticExplosion_get = False
+    draw_text(f"Galactic Explosion : {galacticExplosion_count}", "Arial", 30, 10, 750, color_white)
     # Gravity---------------------------------------------------------------------------------------------------------//
     if character.colliderect(floor):
         # Friction effect---//
