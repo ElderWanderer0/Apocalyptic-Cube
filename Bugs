@@ -1,0 +1,6 @@
+1 - ) In some positions character might teleport between columns or fall from ground.
+2 - ) K skill (Galactic explosion) has some issues with columns.
+3 - ) Sometimes character teleport to the left side or right side of the screen when you try to go limits of the screen.
+      (For now it's x = 1700, x = -50).
+4 - ) If you colliderect the character with right side of the column, it teleports to the left side of column.
+5 - ) When you've jumped, friction effects particles can not seen but still creates particles. It seen when you land to floor.
