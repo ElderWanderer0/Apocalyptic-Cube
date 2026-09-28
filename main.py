@@ -638,7 +638,7 @@ while run:
             Resizer = Gadgets.resize(col_x + col_width/2, col_y - 70)
             if character.colliderect(Resizer):
                 if char_vel >= 0:
-                    dy -= 100
+                    dy -= 100 - char_height
                 char_height = 100
                 char_width = 100
                 char_Jspeed = 30
@@ -757,7 +757,7 @@ while run:
     # Barrier---------------------------------------------------------------------------------------------------------//
     if barrier:
         barrier_countdown = int(barrier_time - barrier_dt)
-        draw_text(f"Barrier:{barrier_countdown}", "Arial", 30, 10, 850, color_white)
+        draw_text(f"Barrier:{barrier_countdown}", "Arial", 30, 10, 800, color_white)
         barrier_dt += 1 * dt
 
         pygame.draw.circle(screen, (254, 254, 227), (char_x+(char_height/2), char_y+(char_height/2)), char_height-10)
@@ -776,6 +776,7 @@ while run:
                 barrier = False
         if border.colliderect(spike1) or border.colliderect(spike2):
             barrier = False
+            spike_rollback = True
 
     # Char smalling animation-----------------------------------------------------------------------------------------//
     char_width -= 0.01
@@ -1013,7 +1014,7 @@ while run:
 
         galacticExplosion = False
         galacticExplosion_get = False
-    draw_text(f"Galactic Explosion : {galacticExplosion_count}", "Arial", 30, 10, 750, color_white)
+    draw_text(f"Galactic Explosion : {galacticExplosion_count}", "Arial", 30, 10, 850, color_white)
     # Gravity---------------------------------------------------------------------------------------------------------//
     if character.colliderect(floor):
         # Friction effect---//
@@ -1041,8 +1042,10 @@ while run:
 
     for c in range(len(columns)):
         if columns[c].colliderect(character.x + dx, character.y, char_width, char_height):
-            char_speed = 0
-            char_x = columns_coordinate_x[c] - 100
+            if dx >= 0:
+                char_x = columns[c].left - 100
+            if dx < 0:
+                char_x = columns[c].right + 5
         elif columns[c].colliderect(character.x, character.y + dy, char_width, char_height):
             # jumping
             if char_vel < 0:
