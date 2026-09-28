@@ -1,6 +1,12 @@
 # Apocalyptic-Cube
 𝙰 𝚙𝚕𝚊𝚝𝚏𝚘𝚛𝚖 𝚐𝚊𝚖𝚎 𝚝𝚑𝚊𝚝 𝚢𝚘𝚞 𝚝𝚛𝚢 𝚗𝚘𝚝 𝚝𝚘 𝚍𝚒𝚎 𝚠𝚑𝚎𝚗 𝚢𝚘𝚞 𝚎𝚟𝚊𝚍𝚎 the 𝚖𝚎𝚝𝚎𝚘𝚛𝚜 𝚊𝚗𝚍 𝚘𝚝𝚑𝚎𝚛 𝚜𝚝𝚞𝚏𝚏𝚜. A𝚗𝚍 𝚝𝚑𝚒𝚜 𝚐𝚊𝚖𝚎 𝚑𝚊𝚜 𝚗𝚘𝚝 𝚒𝚗𝚌𝚕𝚞𝚍𝚎 𝚝𝚎𝚡𝚝𝚞𝚛𝚎𝚜. 𝙾𝚗𝚕𝚢 𝚒𝚗𝚌𝚕𝚞𝚍𝚎𝚜 𝚖𝚊𝚗 𝚖𝚊𝚍𝚎 𝚙𝚞𝚛𝚎 𝚌𝚘𝚍𝚎.
+---
+𝗛𝗢𝗪 𝗧𝗢 𝗣𝗟𝗔𝗬 : WASD or arrow keys for move. J key for "𝐓𝐡𝐞 𝐖𝐨𝐫𝐥𝐝" skill. K key for "𝐆𝐚𝐥𝐚𝐜𝐭𝐢𝐜 𝐄𝐱𝐩𝐥𝐨𝐬𝐢𝐨𝐧" skill. L for Dash.
 
+𝐓𝐡𝐞 𝐖𝐨𝐫𝐥𝐝 : Stops the time for 5 seconds. <br>
+𝐆𝐚𝐥𝐚𝐜𝐭𝐢𝐜 𝐄𝐱𝐩𝐥𝐨𝐬𝐢𝐨𝐧 : Respawns all entities. (Spikes, meteors, columns).
+
+<br>
 <p>
   𝘿𝙚𝙢𝙤 𝙫𝙞𝙙𝙚𝙤 𝙤𝙛 𝙩𝙝𝙚 𝙜𝙖𝙢𝙚. <br>
   <img src="https://github.com/ElderWanderer0/Apocalyptic-Cube/blob/main/Gifs/demo.gif?raw=true" width="300" alt="Game demo"><br><br><br>
